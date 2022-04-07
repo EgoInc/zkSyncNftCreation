@@ -21,12 +21,6 @@ async function main(): Promise<void> {
     console.log("Your balance", ethers.utils.formatEther(balancePromise));
 
 
-/*
-    const withdraw = await syncWallet.withdrawFromSyncToEthereum({
-        ethAddress: ethWallet.address,
-        token: 'ETH',
-        amount: ethers.utils.parseEther('1.0')
-      });
     const deposit = await syncWallet.depositToSyncFromEthereum({
         depositTo: syncWallet.address(),
         token: 'ETH',
@@ -37,12 +31,12 @@ async function main(): Promise<void> {
     const depositReceipt = await deposit.awaitVerifyReceipt();
     console.log(deposit);
       console.log("Your balance", ethers.utils.formatEther(balancePromise));
-*/
+
 
     //get state of zksync account
     const walletAddress = "0xEA79A85AF89068BD7e57902335e4932F54d8079E";
     //console.log('state',await syncProvider.getState(walletAddress));
-/*
+
 
     let CIDhash = CID.parse("QmQhkT5iJKTXukxaKC9UhBYQue9paX9YU3XbGyGQo4yBQV");
 
@@ -79,7 +73,7 @@ async function main(): Promise<void> {
     console.log(state.verified.nfts);
 
     console.log ("Total minting time", elapsed);
-    */
+  
 
 
     const { totalFee: fee } = await syncProvider.getTransactionFee('FastWithdraw', syncWallet.address(), "ETH");
